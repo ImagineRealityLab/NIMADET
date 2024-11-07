@@ -1,0 +1,390 @@
+% This script defines the subject details for 'fil_mri_organise_batch'
+
+%% SUBJECT DETAILS
+% S01
+subj{1}.name       = 'S01';
+subj{1}.date       = '20230203';
+subj{1}.scanid     = 'MP03651_FIL.S';
+subj{1}.localiser  = 1;
+subj{1}.structural = 2;
+subj{1}.functional = [8 10 12 14 16 20]; % second to last block was mistake
+subj{1}.fieldmaps  = [5 6];
+subj{1}.delete     = []; % Short functional check
+subj{1}.map        = 1;
+
+% S02
+subj{2}.name       = 'S02';
+subj{2}.date       = '20230217';
+subj{2}.scanid     = 'MP03664_FIL.S';
+subj{2}.localiser  = 1;
+subj{2}.structural = 2;
+subj{2}.functional = [8 10 12 14 16 18]; 
+subj{2}.fieldmaps  = [5 6];
+subj{2}.delete     = []; % Short functional check
+subj{2}.map        = 1;
+
+% S03
+subj{3}.name       = 'S03';
+subj{3}.date       = '20230217';
+subj{3}.scanid     = 'MP03665_FIL.S';
+subj{3}.localiser  = 1;
+subj{3}.structural = 2;
+subj{3}.functional = [10 12 14 16 18 20]; % first block was mistake
+subj{3}.fieldmaps  = [5 6];
+subj{3}.delete     = []; % Short functional check
+subj{3}.map        = 1;
+
+% S04
+subj{4}.name       = 'S04';
+subj{4}.date       = '20230224';
+subj{4}.scanid     = 'MP03668_FIL.S';
+subj{4}.localiser  = 7;
+subj{4}.structural = 2;
+subj{4}.functional = [13 15 17 19 21 23]; 
+subj{4}.fieldmaps  = [10 11];
+subj{4}.delete     = []; % Short functional check
+subj{4}.map        = 1;
+
+% S05
+subj{5}.name       = 'S05';
+subj{5}.date       = '20230303';
+subj{5}.scanid     = 'MP03676_FIL.S';
+subj{5}.localiser  = 1;
+subj{5}.structural = 2;
+subj{5}.functional = [8 10 12 14 16 18]; 
+subj{5}.fieldmaps  = [5 6];
+subj{5}.delete     = []; % Short functional check
+subj{5}.map        = 1;
+
+% S06
+subj{6}.name       = 'S06';
+subj{6}.date       = '20230316';
+subj{6}.scanid     = 'MQ03684_FIL.S';
+subj{6}.localiser  = 1;
+subj{6}.structural = 2;
+subj{6}.functional = [8 10 12 14 16 18]; 
+subj{6}.fieldmaps  = [5 6];
+subj{6}.delete     = []; % Short functional check
+subj{6}.map        = 1;
+
+% S07
+subj{7}.name       = 'S07';
+subj{7}.date       = '20230323';
+subj{7}.scanid     = 'MP03692_FIL.S';
+subj{7}.localiser  = 1;
+subj{7}.structural = 2;
+subj{7}.functional = [8 10 12 14 23 25]; 
+subj{7}.fieldmaps  = [5 6]; % extra fieldtrip before localizer - check
+subj{7}.delete     = []; % Short functional check
+subj{7}.map        = 1;
+
+% S08 was not used due to failed imagery check (incorrect 11/14)
+
+% S09
+subj{9}.name       = 'S09';
+subj{9}.date       = '20230324';
+subj{9}.scanid     = 'MP03694_FIL.S';
+subj{9}.localiser  = 1;
+subj{9}.structural = 2;
+subj{9}.functional = [8 10 12 14 16 18]; 
+subj{9}.fieldmaps  = [5 6];
+subj{9}.delete     = []; % Short functional check
+subj{9}.map        = 1;
+
+% S10
+subj{10}.name       = 'S10';
+subj{10}.date       = '20230417';
+subj{10}.scanid     = 'MP03698_FIL.S';
+subj{10}.localiser  = 1;
+subj{10}.structural = 2;
+subj{10}.functional = [8 10 12 14 16 18]; 
+subj{10}.fieldmaps  = [5 6];
+subj{10}.delete     = []; % Short functional check
+subj{10}.map        = 1;
+
+% S11
+subj{11}.name       = 'S11';
+subj{11}.date       = '20230418';
+subj{11}.scanid     = 'MP03699_FIL.S';
+subj{11}.localiser  = 1;
+subj{11}.structural = 2;
+subj{11}.functional = [8 10 12 14 16 18]; 
+subj{11}.fieldmaps  = [5 6];
+subj{11}.delete     = []; % Short functional check
+subj{11}.map        = 1;
+
+% S12
+subj{12}.name       = 'S12';
+subj{12}.date       = '20230420';
+subj{12}.scanid     = 'MP03703_FIL.S';
+subj{12}.localiser  = 1;
+subj{12}.structural = 2;
+subj{12}.functional = [8 10 12 14 16 18]; 
+subj{12}.fieldmaps  = [5 6];
+subj{12}.delete     = []; % Short functional check
+subj{12}.map        = 1;
+
+% S13
+subj{13}.name       = 'S13';
+subj{13}.date       = '20230424';
+subj{13}.scanid     = 'MP03707_FIL.S';
+subj{13}.localiser  = [1 11]; % had to pee in the middle, so two localizers
+subj{13}.structural = 2;
+subj{13}.functional = [8 10 17 19 21 23]; 
+subj{13}.fieldmaps  = [5 6 14 15]; % and two times the fieldmaps
+subj{13}.delete     = []; % Short functional check
+subj{13}.map        = 1;
+
+% S14
+subj{14}.name       = 'S14';
+subj{14}.date       = '20230425';
+subj{14}.scanid     = 'MP03709_FIL.S';
+subj{14}.localiser  = 1; 
+subj{14}.structural = 2;
+subj{14}.functional = [8 10 12 14 16 18]; 
+subj{14}.fieldmaps  = [5 6]; 
+subj{14}.delete     = []; 
+subj{14}.map        = 1;
+
+% S15
+subj{15}.name       = 'S15';
+subj{15}.date       = '20230428';
+subj{15}.scanid     = 'MP03713_FIL.S';
+subj{15}.localiser  = 1; 
+subj{15}.structural = 2;
+subj{15}.functional = [8 10 13 15 17 19]; 
+subj{15}.fieldmaps  = [5 6]; 
+subj{15}.delete     = []; 
+subj{15}.map        = 1;
+
+% S16
+subj{16}.name       = 'S16';
+subj{16}.date       = '20230428';
+subj{16}.scanid     = 'MP03714_FIL.S';
+subj{16}.localiser  = 1; 
+subj{16}.structural = 2;
+subj{16}.functional = [8 10 12 14 16 18]; 
+subj{16}.fieldmaps  = [5 6]; 
+subj{16}.delete     = []; 
+subj{16}.map        = 1;
+
+% S17
+subj{17}.name       = 'S17';
+subj{17}.date       = '20230509';
+subj{17}.scanid     = 'MP03721_FIL.S';
+subj{17}.localiser  = 1; 
+subj{17}.structural = 2;
+subj{17}.functional = [8 10 12 14 16 18]; 
+subj{17}.fieldmaps  = [5 6]; 
+subj{17}.delete     = []; 
+subj{17}.map        = 1;
+
+% S18
+subj{18}.name       = 'S18';
+subj{18}.date       = '20230509';
+subj{18}.scanid     = 'MP03722_FIL.S';
+subj{18}.localiser  = 1; 
+subj{18}.structural = 2;
+subj{18}.functional = [10 12 14 16 18 20]; % cut-off first block because of Matlab crash 
+subj{18}.fieldmaps  = [5 6]; 
+subj{18}.delete     = []; 
+subj{18}.map        = 1;
+
+% S19
+subj{19}.name       = 'S19';
+subj{19}.date       = '20230516';
+subj{19}.scanid     = 'MP03727_FIL.S';
+subj{19}.localiser  = 1; 
+subj{19}.structural = 2;
+subj{19}.functional = [10 12 14 16 18 20]; % first block was mistake
+subj{19}.fieldmaps  = [5 6]; 
+subj{19}.delete     = []; 
+subj{19}.map        = 1;
+
+% S20
+subj{20}.name       = 'S20';
+subj{20}.date       = '20230518';
+subj{20}.scanid     = 'MP03730_FIL.S';
+subj{20}.localiser  = 1; 
+subj{20}.structural = 2;
+subj{20}.functional = [10 12 14 16 18 20]; % first block was mistake
+subj{20}.fieldmaps  = [7 8]; 
+subj{20}.delete     = []; 
+subj{20}.map        = 1;
+
+% S21
+subj{21}.name       = 'S21';
+subj{21}.date       = '20230519';
+subj{21}.scanid     = 'MP03731_FIL.S';
+subj{21}.localiser  = 1; 
+subj{21}.structural = 2;
+subj{21}.functional = [8 10 12 14 16 18];
+subj{21}.fieldmaps  = [5 6]; 
+subj{21}.delete     = []; 
+subj{21}.map        = 1;
+
+% S22
+subj{22}.name       = 'S22';
+subj{22}.date       = '20230519';
+subj{22}.scanid     = 'MP03732_FIL.S';
+subj{22}.localiser  = 1; 
+subj{22}.structural = 2;
+subj{22}.functional = [8 10 12 14 16 18];
+subj{22}.fieldmaps  = [5 6]; 
+subj{22}.delete     = []; 
+subj{22}.map        = 1;
+
+% S23
+subj{23}.name       = 'S23';
+subj{23}.date       = '20230523';
+subj{23}.scanid     = 'MP03738_FIL.S';
+subj{23}.localiser  = 1; 
+subj{23}.structural = 2;
+subj{23}.functional = [8 10 12 14 16 18];
+subj{23}.fieldmaps  = [5 6]; 
+subj{23}.delete     = []; 
+subj{23}.map        = 1;
+
+% S24
+subj{24}.name       = 'S24';
+subj{24}.date       = '20230525';
+subj{24}.scanid     = 'MP03740_FIL.S';
+subj{24}.localiser  = 1; 
+subj{24}.structural = 2;
+subj{24}.functional = [8 10 12 14 16 18];
+subj{24}.fieldmaps  = [5 6]; 
+subj{24}.delete     = []; 
+subj{24}.map        = 1;
+
+% S25
+subj{25}.name       = 'S25';
+subj{25}.date       = '20230601';
+subj{25}.scanid     = 'MP03743_FIL.S';
+subj{25}.localiser  = 1; 
+subj{25}.structural = 2;
+subj{25}.functional = [8 10 12 14 16 18];
+subj{25}.fieldmaps  = [5 6]; 
+subj{25}.delete     = []; 
+subj{25}.map        = 1;
+
+% S26
+subj{26}.name       = 'S26';
+subj{26}.date       = '20230602';
+subj{26}.scanid     = 'MP03745_FIL.S';
+subj{26}.localiser  = 1; 
+subj{26}.structural = 2;
+subj{26}.functional = [10 12 14 16 18 20];
+subj{26}.fieldmaps  = [7 8]; 
+subj{26}.delete     = []; 
+subj{26}.map        = 1;
+
+% S27
+subj{27}.name       = 'S27';
+subj{27}.date       = '20230602';
+subj{27}.scanid     = 'MP03746_FIL.S';
+subj{27}.localiser  = 1; 
+subj{27}.structural = 2;
+subj{27}.functional = [8 10 12 14 16 18];
+subj{27}.fieldmaps  = [5 6]; 
+subj{27}.delete     = []; 
+subj{27}.map        = 1;
+
+% S28
+subj{28}.name       = 'S28';
+subj{28}.date       = '20230605';
+subj{28}.scanid     = 'MP03748_FIL.S';
+subj{28}.localiser  = 1; 
+subj{28}.structural = 2;
+subj{28}.functional = [8 10 12 14 16 18];
+subj{28}.fieldmaps  = [5 6]; 
+subj{28}.delete     = []; 
+subj{28}.map        = 1;
+
+% S29
+subj{29}.name       = 'S29';
+subj{29}.date       = '20230606';
+subj{29}.scanid     = 'MP03749_FIL.S';
+subj{29}.localiser  = 1; 
+subj{29}.structural = 2;
+subj{29}.functional = [8 10 12 14 16 18];
+subj{29}.fieldmaps  = [5 6]; 
+subj{29}.delete     = []; 
+subj{29}.map        = 1;
+
+% S30
+subj{30}.name       = 'S30';
+subj{30}.date       = '20230608';
+subj{30}.scanid     = 'MP03750_FIL.S';
+subj{30}.localiser  = 1; 
+subj{30}.structural = 2;
+subj{30}.functional = [8 10 12 14 16 18];
+subj{30}.fieldmaps  = [5 6]; 
+subj{30}.delete     = []; 
+subj{30}.map        = 1;
+
+% S31
+subj{31}.name       = 'S31';
+subj{31}.date       = '20230608';
+subj{31}.scanid     = 'MP03751_FIL.S';
+subj{31}.localiser  = 1; 
+subj{31}.structural = 2;
+subj{31}.functional = [8 10 12 14 16 18];
+subj{31}.fieldmaps  = [5 6]; 
+subj{31}.delete     = []; 
+subj{31}.map        = 1;
+
+% S32
+subj{32}.name       = 'S32';
+subj{32}.date       = '20230612';
+subj{32}.scanid     = 'MP03752_FIL.S';
+subj{32}.localiser  = 1; 
+subj{32}.structural = 2;
+subj{32}.functional = [8 10 12 14 16 18];
+subj{32}.fieldmaps  = [5 6]; 
+subj{32}.delete     = []; 
+subj{32}.map        = 1;
+
+% S33
+subj{33}.name       = 'S33';
+subj{33}.date       = '20230613';
+subj{33}.scanid     = 'MP03753_FIL.S';
+subj{33}.localiser  = 1; 
+subj{33}.structural = 2;
+subj{33}.functional = [8 10 12 14 16 18];
+subj{33}.fieldmaps  = [5 6]; 
+subj{33}.delete     = []; 
+subj{33}.map        = 1;
+
+% S34
+subj{34}.name       = 'S34';
+subj{34}.date       = '20230615';
+subj{34}.scanid     = 'MP03755_FIL.S';
+subj{34}.localiser  = 1; 
+subj{34}.structural = 2;
+subj{34}.functional = [8 10 17 19 21 23];
+subj{34}.fieldmaps  = [5 6 14 15]; 
+subj{34}.delete     = []; 
+subj{34}.map        = 1;
+
+% S35
+subj{35}.name       = 'S35';
+subj{35}.date       = '20230615';
+subj{35}.scanid     = 'MP03756_FIL.S';
+subj{35}.localiser  = 1; 
+subj{35}.structural = 2;
+subj{35}.functional = [10 12 14 16 18 20];
+subj{35}.fieldmaps  = [5 6]; 
+subj{35}.delete     = []; 
+subj{35}.map        = 1;
+
+% S36
+subj{36}.name       = 'S36';
+subj{36}.date       = '20230616';
+subj{36}.scanid     = 'MP03758_FIL.S';
+subj{36}.localiser  = 1; 
+subj{36}.structural = 2;
+subj{36}.functional = [8 10 12 14 16 18];
+subj{36}.fieldmaps  = [5 6]; 
+subj{36}.delete     = []; 
+subj{36}.map        = 1;
+
