@@ -1,0 +1,24 @@
+function analyse_data(cfg)
+
+nsubs = length(cfg.files);
+
+% loop over data-sets
+for s = 1:nsubs
+    
+    % load the data
+    dataFile = str2fullfile(fullfile(cfg.dir,cfg.files{s}),'PMT*');
+    load(dataFile{1},'R','C','blocks','miniblocks','trials')
+    
+    % determine congruency
+    nMB = length(miniblocks);
+    ima = reshape(repmat(blocks',cfg.nMB,1),nMB,1);
+    det = miniblocks;
+    cong = ima==det;
+    
+    % get acc per mini-blocks
+    acc = nan(nMB,1);
+    for mb = 1:nMB
+        acc(mb) = mean(squeeze(R(:,mb,3)))
+    
+    
+end
