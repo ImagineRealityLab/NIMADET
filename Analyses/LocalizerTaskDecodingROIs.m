@@ -225,12 +225,6 @@ for sub = 1:nSub
                 nan_idx = any(isnan(x{1})) | any(isnan(x{2}));
                 x{1}(:,nan_idx) = []; x{2}(:,nan_idx) = [];
 
-%                 % mean center per run
-%                 RN = task_ridx{i};
-%                 for rn = 1:length(unique(RN))
-%                    x{2}(RN==rn,:) = x{2}(RN==rn,:)-mean(x{2}(RN==rn,:),1);
-%                 end
-
                 % MEAN CENTER OVER VOXELS
                 x{1} = x{1}-mean(x{1},2);
                 x{2} = x{2}-mean(x{2},2);
