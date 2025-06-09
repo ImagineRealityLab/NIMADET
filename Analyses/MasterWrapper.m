@@ -330,4 +330,119 @@ cfg.ROI{4} = fullfile(FLdir,'\con_0002\preSMA.nii');
 cfg.outDir = 'GroupResults/FunctionalCoupling/leftFG';
 FunctionalCoupling(cfg)
 
+%% 9. Multivariate signatures of RS signal
+
+% 9.1 Decode vividness per searchlight
+cfg          = []; 
+cfg.root     = root;
+cfg.data     = resultDir;
+cfg.ima_check = true;
+cfg.subjects = subjects(which_subjects);
+cfg.dataDir  = '_perTrialPoldrack';
+cfg.outDir   = 'Revision1_Neuron/Decoding/Vividness_Corrected_SL_L2_100000';
+cfg.radius   = 4;
+cfg.func_mask  = fullfile(root,'Results\GroupResults','FirstLevel','GLM_cong','con_0001','mask.nii');
+
+VividnessRegressionDecodingSearchlight(cfg);
+
+% 9.2 Second level one-sample t-test on spearman correlations
+cfg = [];
+cfg.root      = fullfile(root,'Results');
+cfg.subjects  = subjects(which_subjects);
+cfg.dir       = 'Revision1_Neuron/Decoding/Vividness_Corrected_SL_L2_100000';
+cfg.spm_dir   = spm_dir;
+cfg.contrast  = 'accuracy.nii';
+cfg.outputDir = fullfile(cfg.root,'GroupResults',cfg.dir,'accuracy');
+cfg.mask      = fullfile(root,'resliced_gm_mask.nii');
+%cfg.covariate = fullfile(root,'Results','GroupResults','criterion_shift.mat');
+
+SecondLevelOST(cfg)
+
+% 9.3 Do follow up tests on significant searchlights to find RS signatures 
+cfg = [];
+cfg.root      = fullfile(root,'Results');
+cfg.data     = resultDir;
+cfg.ima_check = true;
+cfg.subjects = subjects(which_subjects);
+cfg.dataDir  = '_perTrialPoldrack';
+cfg.dir       = 'Revision1_Neuron/Decoding/Vividness_SL_L2_100000';
+cfg.tthreshold = 3.450189; % p < 0.001 uncorrected
+cfg.mask      = fullfile(root,'resliced_gm_mask.nii');
+cfg.radius   = 4;
+cfg.func_mask  = fullfile(root,'Results\GroupResults','FirstLevel','GLM_cong','con_0001','mask.nii');
+
+CheckRSpattern(cfg)
+
+% 9.4 Get the significant multivariate RS ROIs
+cfg = [];
+cfg.root       = root;
+cfg.atlas      = 'D:\NIMADET\Analyses\ROI_masks\aal';
+cfg.atlasNames = {'Insula_L'};
+cfg.tmap       = '\Results\GroupResults\Revision1_Neuron/Decoding/Vividness_Corrected_SL_L2_100000\RS_sig.nii';
+cfg.tthresh    = 0.1;
+cfg.write      = '\Results\GroupResults\Revision1_Neuron/Decoding/Vividness_Corrected_SL_L2_100000\leftInsula.nii';
+
+GetROIindices(cfg);
+
+%% 10. ROI analyses within mv RS regions
+% 10.1 Univariate effects 
+% ROI univariate effects
+cfg = [];
+cfg.root = root;
+cfg.subjects = subjects(which_subjects);
+cfg.dir = 'D:\NIMADET\Results\GroupResults\Revision1_Neuron/Decoding/Vividness_Corrected_SL_L2_100000';
+cfg.ROIs = {'leftInsula','rightInsula','dmPFC'};
+cfg.data_dir = 'FirstLevel\MT_BehModRegressorsIC';
+cfg.contrast{1}  = 'spmT_0004.nii'; 
+cfg.contrast{2}  = 'spmT_0005.nii'; 
+cfg.conNames     = {'Vividness','Detection'};
+cfg.plotting     = true;
+
+act = ROIcontrastsMultipleROIs(cfg);
+
+cfg = [];
+cfg.root = root;
+cfg.plot = true;
+cfg.subjects = subjects(which_subjects);
+cfg.ROI = 'D:\NIMADET\Results\GroupResults\Revision1_Neuron/Decoding/Vividness_SL_L2_100000\midOcc.nii';
+[~,cfg.ROI_name] = fileparts(cfg.ROI);
+
+cfg.data_dir = 'FirstLevel\MT_TaskRegressorsGN';
+cfg.cond{1}  = 'inco_abs';
+cfg.cond{2}  = 'inco_pres';
+cfg.cond{3}  = 'cong_abs';
+cfg.cond{4}  = 'cong_pres';
+
+act = ROItaskfactoranalysis(cfg);
+
+% 10.2 Predicted RS per ROI
+% Look at predicted RS for cong, pres, and high viv, low viv
+cfg = [];
+cfg.root      = fullfile(root,'Results');
+cfg.data      = resultDir;
+cfg.ima_check = true;
+cfg.subjects  = subjects(which_subjects);
+cfg.dataDir   = '_perTrialPoldrack';
+cfg.dir       = 'Revision1_Neuron/Decoding/Vividness_Corrected_SL_L2_100000';
+cfg.ROIs      = {'leftInsula','rightInsula','dmPFC'};
+
+RSPredictedAct(cfg)
+
+% 10.3 Check if vividness or RJ is better decodeable from these ROIs
+cfg          = []; 
+cfg.root     = root;
+cfg.dir      = 'Revision1_Neuron/Decoding/Vividness_Corrected_SL_L2_100000';
+cfg.ROIs     = {'leftInsula','rightInsula','dmPFC'};
+cfg.ima_check = true;
+cfg.subjects = subjects(which_subjects);
+cfg.dataDir  = 'FirstLevel/MT_perTrialPoldrack';
+cfg.outDir   = 'Revision1_Neuron/Decoding/VividnessCorrectedVSRJ';
+cfg.permutation = true;
+cfg.plotIndividual = false;
+cfg.plotGroup   = true;
+cfg.gamma = 0.1;
+cfg.balancetrialsRJViv = false; % balance the trials per RJ/Viv
+
+DecodeVividnessVersusRJDSsamples(cfg)
+
 
