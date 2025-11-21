@@ -23,7 +23,7 @@ for sub = 1:nsubjects
         load(fullfile(cfg.root,cfg.subjects{sub},cfg.dir,'SPM.mat'),'SPM')
         con_num = find(contains({SPM.xCon(:).name},cfg.conName));
         images{sub} = str2fullfile(fullfile(cfg.root,cfg.subjects{sub},cfg.dir),...
-            sprintf('spmT_%04d.nii',con_num));
+            sprintf('con_%04d.nii',con_num));
     end
 end
 
@@ -75,3 +75,4 @@ getcontrast{1}.spm.stats.con.delete = 1;
 spm_jobman('run',getcontrast)
 rmpath(genpath(cfg.spm_dir))
 addpath(cfg.spm_dir)
+
