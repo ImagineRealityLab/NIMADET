@@ -12,6 +12,19 @@ nSubs = length(cfg.subjects);
 % column info of the B matrix with behavioural data
 cP = 1; cI = 2; cPr = 3; cR = 4; cV = 5; cIC = 6; cTS = 7;
 cTR_s = 8; cTR_r = 9; cTV_s = 10; cTV_r = 11;
+% Information on columns:
+% cP = perception orientation 
+% cI = imagery orientation
+% cPr = stimulus presence (1=present, 0=absent)
+% cR = detection response (reality judgement) (1=present, 0=absent)
+% cV = vividness rating
+% cIC = imagery check (1=correct, 0 = incorrect)
+% cTS = onset stimulus
+% cTR_s = onset detection screen
+% cTR_r = onset detection response
+% cTV_s = onset vividness screen
+% cTV_r = onset vividness response 
+
 
 %% Loop over subjects
 for sub = 1:nSubs
@@ -155,5 +168,6 @@ for sub = 1:nSubs
         clear Onsets Durs Stim Viv Nuisance Nuisance_names B IC
 
     end
+
 
 end
